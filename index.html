@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bharat Business Desk – Loans and Investments Advisory Services</title>
+<meta name="description" content="Loan and investment advisory for businesses, with sector-wise funding solutions.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--alt:#f3f6f5;--surface:#fff;--ink:#10241f;--muted:#51635e;--navy:#0c2f2c;--navy2:#17504a;--gold:#c2a265;--line:#dde5e3;--shadow:0 10px 30px rgba(12,47,44,.09)}
+@media (prefers-color-scheme:dark){:root{--bg:#0a1a19;--alt:#0d2120;--surface:#12302d;--ink:#edf1fa;--muted:#a8b4cd;--navy:#082421;--line:#25504b;--shadow:none}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 Inter,system-ui,sans-serif;padding-top:env(safe-area-inset-top,0px)}
+h1,h2,h3{font-family:Lora,Georgia,serif;margin:0;line-height:1.2}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+.top{background:var(--navy);color:#cfe3de;font-size:14px}
+.top .wrap{display:flex;justify-content:space-between;gap:6px 24px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.top a{text-decoration:none}.top a:hover{color:var(--gold)}
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px 28px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand b{font:700 21px Lora,serif;line-height:1}
+.brand small{display:block;font:500 11px Inter,sans-serif;color:var(--muted);letter-spacing:.04em;margin-top:3px}
+nav{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:500;font-size:15px}
+nav a:hover{color:var(--gold)}
+.btn{display:inline-block;background:var(--gold);color:#0c2f2c;font:600 15px Inter,sans-serif;padding:13px 26px;border-radius:8px;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.07)}
+nav a.btn{color:#0c2f2c;padding:10px 20px}
+.btn.line{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45);margin-left:10px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:84px 0}
+.hero .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:48px;align-items:center}
+.hero h1{font-size:clamp(34px,5vw,54px)}
+.hero p{color:#c5ddd7;font-size:18px;margin:20px 0 32px;max-width:32em}
+.panel{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:26px}
+.panel h3{font-size:19px;margin-bottom:16px}
+.panel ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.panel li{display:flex;gap:14px;color:#dcece8;font-size:15px}
+.panel li svg{flex:none;margin-top:2px}
+.panel b{display:block;color:#fff;font-weight:600}
+section{padding:80px 0}
+.alt{background:var(--alt)}
+.head{max-width:620px;margin:0 0 44px}
+.head.c{margin-inline:auto;text-align:center}
+.head h2{font-size:clamp(28px,3.6vw,38px)}
+.head p{color:var(--muted);margin:12px 0 0}
+.head::after{content:"";display:block;width:56px;height:3px;background:var(--gold);margin-top:18px}
+.head.c::after{margin-inline:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+.card h3{font-size:21px}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
+.pc{cursor:pointer;padding:0;overflow:hidden;gap:0}
+.pc .body{padding:20px 24px 24px;display:flex;flex-direction:column;gap:8px}
+.pc .ill{height:120px;background:linear-gradient(135deg,var(--navy),var(--navy2));display:grid;place-items:center}
+.pc.on{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.more{font-weight:600;font-size:15px;color:var(--navy2)}
+@media (prefers-color-scheme:dark){.more{color:var(--gold)}}
+.detail{margin-top:32px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;box-shadow:var(--shadow)}
+.detail h3{font-size:26px;margin-bottom:8px}
+.detail p{color:var(--muted);margin:0}
+.pl{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.pl li{padding:12px 16px;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:8px;font-weight:500}
+.pl li span{display:block;font-weight:400;color:var(--muted);font-size:14.5px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px}
+.adv{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.adv li{display:flex;gap:14px}
+.adv svg{flex:none;margin-top:3px}
+.adv b{display:block}
+.adv span{color:var(--muted);font-size:15.5px}
+.hint{text-align:center;color:var(--muted);font-size:14px;margin:-24px 0 22px}
+.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;counter-reset:s}
+.tl li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--line);border-radius:12px;padding:24px;cursor:pointer;transition:border-color .2s}
+.tl li.on{border-top-color:var(--gold)}
+.tl li::before{content:"Step " counter(s);display:block;font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px}
+.tl b{display:block;font:700 19px Lora,serif;margin-bottom:6px}
+.tl span{color:var(--muted);font-size:15.5px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0 22px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:600;padding:18px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";font-size:22px;line-height:1;color:var(--gold)}
+details[open] summary::after{content:"\2013"}
+details p{margin:0 0 18px;color:var(--muted)}
+.cta{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff}
+.cta h2{color:#fff}.cta .head p{color:#c5ddd7}
+.cbox{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px;align-items:start}
+.info a{display:flex;gap:16px;align-items:center;text-decoration:none;padding:20px;border:1px solid rgba(255,255,255,.2);border-radius:12px;margin-bottom:14px;background:rgba(255,255,255,.06)}
+.info a:hover{border-color:var(--gold)}
+.info small{display:block;color:#c5ddd7}
+form{background:var(--surface);color:var(--ink);border-radius:16px;padding:28px;display:grid;gap:14px}
+label{font-weight:600;font-size:14px;display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
+#ok{color:var(--navy2);font-weight:600;margin:0}
+@media (prefers-color-scheme:dark){#ok{color:var(--gold)}}
+footer{background:var(--navy);color:#a9c4bd;font-size:14px;padding:26px 0 calc(26px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer small{display:block;margin-top:6px;opacity:.8}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tl li{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="ck" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#c2a265"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#0c2f2c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs></svg>
+
+<div class="top"><div class="wrap">
+  <span>Loan and investment advisory for business services &nbsp;|&nbsp; Hyderabad, Telangana</span>
+  <span><a href="mailto:bharathbusiness89@gmail.com">bharathbusiness89@gmail.com</a> &nbsp;|&nbsp; <a href="tel:+919966644638">9966644638</a></span>
+</div></div>
+
+<header><div class="wrap">
+  <a class="brand" href="#home" aria-label="Bharat Business Desk home">
+    <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#0c2f2c"/><path d="M11 29V11h9.5c3.3 0 5.3 1.7 5.3 4.4 0 1.8-.9 3.1-2.5 3.8 2.2.6 3.5 2.2 3.5 4.5 0 3-2.2 5.3-6 5.3H11z" fill="none" stroke="#c2a265" stroke-width="2.4" stroke-linejoin="round"/></svg>
+    <span><b>Bharat Business Desk</b><small>LOANS &amp; INVESTMENTS ADVISORY SERVICES</small></span>
+  </a>
+  <nav aria-label="Main">
+    <a href="#home">Home</a><a href="#products">Sectors</a><a href="#services">Services</a><a href="#approach">Our approach</a><a href="#about">About</a><a href="#contact">Contact us</a>
+    <a class="btn" href="#contact">Apply now</a>
+  </nav>
+</div></header>
+
+<main>
+<div class="hero" id="home"><div class="wrap">
+  <div>
+    <h1>Smart funding and investment advice for your business and projects.</h1>
+    <p>We guide you towards the right loans and investments, and take the hassle off your shoulders.</p>
+    <a class="btn" href="#contact">Discuss your requirement</a><a class="btn line" href="#products">View products</a>
+  </div>
+  <div class="panel">
+    <h3>Why businesses choose us</h3>
+    <ul>
+      <li><svg width="22" height="22"><use href="#ck"/></svg><span><b>Right-fit funding</b>Options matched to what your business really needs</span></li>
+      <li><svg width="22" height="22"><use href="#ck"/></svg><span><b>Smarter investing</b>Advice to grow your investments</span></li>
+      <li><svg width="22" height="22"><use href="#ck"/></svg><span><b>Paperwork made light</b>Less running around, more time for your business</span></li>
+      <li><svg width="22" height="22"><use href="#ck"/></svg><span><b>Advice at every step</b>We guide you through each stage of the loan process</span></li>
+    </ul>
+  </div>
+</div></div>
+
+<section id="products"><div class="wrap">
+  <div class="head c"><h2>Our sectors</h2><p>Choose a sector to see the products under it and what each one is about.</p></div>
+  <div class="grid" id="sectors"></div>
+  <div class="detail" aria-live="polite">
+    <div><h3 id="dt"></h3><p id="dp"></p><a class="btn" href="#contact" style="margin-top:18px">Enquire now</a></div>
+    <ul id="dl" class="pl"></ul>
+  </div>
+</div></section>
+
+<section id="services" class="alt"><div class="wrap">
+  <div class="head"><h2>Our services</h2><p>Advice and hands-on support, so your loan does not stall on paperwork.</p></div>
+  <div class="two">
+    <ul class="adv">
+      <li><svg width="22" height="22"><use href="#ck"/></svg><div><b>Loan and investment advisory</b><span>Guidance on choosing the right product and structure for your business.</span></div></li>
+      <li><svg width="22" height="22"><use href="#ck"/></svg><div><b>Loan documentation advisory</b><span>What documents you need and how to prepare them.</span></div></li>
+      <li><svg width="22" height="22"><use href="#ck"/></svg><div><b>Loan process support</b><span>Each stage explained, so you know what happens next.</span></div></li>
+      <li><svg width="22" height="22"><use href="#ck"/></svg><div><b>End-to-end support</b><span>From the first application to the final disbursal.</span></div></li>
+    </ul>
+    <div class="card"><h3>Not sure which loan you need?</h3><p>Tell us what you want to fund. We will advise you on the product and the next steps.</p><a class="btn" style="align-self:flex-start;margin-top:10px" href="#contact">Talk to us</a></div>
+  </div>
+  <p style="font-size:13px;color:var(--muted);margin-top:22px">*Approval, timelines and final decisions rest with the lender and are subject to its terms, conditions and policies.</p>
+</div></section>
+
+<section id="approach"><div class="wrap">
+  <div class="head c"><h2>Our approach</h2><p>A simple and streamlined process from start to finish.</p></div>
+  <p class="hint">Click a step to follow the journey.</p>
+  <ol class="tl" id="tl">
+    <li class="on" tabindex="0"><b>Share your requirement</b><span>Tell us what you need to fund.</span></li>
+    <li tabindex="0"><b>Get advice</b><span>We recommend the right product and approach.</span></li>
+    <li tabindex="0"><b>Paperwork made easy</b><span>We guide you on documents and get things moving.</span></li>
+    <li tabindex="0"><b>Step-by-step guidance</b><span>We explain what each stage involves and what to prepare next.</span></li>
+  </ol>
+</div></section>
+
+<section id="about" class="alt"><div class="wrap"><div class="two">
+  <div class="head" style="margin:0"><h2>About Bharat Business Desk</h2><p>We are a loan and investment advisory company for Indian businesses and projects. We handle the advice and paperwork, so you can focus on running your business.</p></div>
+  <div>
+    <details open><summary>What loans do you help with?</summary><p>Secured loans, unsecured loans, structured finance, equity finance and more.</p></details>
+    <details><summary>Do you help with documents?</summary><p>Yes. We advise on the documents needed for your loan and how to prepare them.</p></details>
+    <details><summary>Do you advise us during the loan process?</summary><p>Yes. Approval and final decisions rest with the lender.</p></details>
+    <details><summary>How do I get started?</summary><p>Call or email us, or send an enquiry using the form below.</p></details>
+  </div>
+</div></div></section>
+
+<section id="contact" class="cta"><div class="wrap">
+  <div class="head"><h2>Contact us</h2><p>Share your requirement and we will get back to you.</p></div>
+  <div class="cbox">
+    <div class="info">
+      <a href="tel:+919966644638"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c2a265" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg><span><small>Call us</small>9966644638</span></a>
+      <a href="mailto:bharathbusiness89@gmail.com"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c2a265" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span><small>Email us</small>bharathbusiness89@gmail.com</span></a>
+    </div>
+    <form id="f">
+      <label>Name<input name="n" required autocomplete="name"></label>
+      <label>Phone<input name="p" type="tel" required autocomplete="tel"></label>
+      <label>Sector<select name="s" id="sel"></select></label>
+      <label>Your requirement<textarea name="m" rows="3"></textarea></label>
+      <button class="btn" type="submit">Send enquiry</button>
+      <p id="ok" role="status"></p>
+    </form>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© <span id="y"></span> Bharat Business Desk. All rights reserved.</span>
+  <span>Loans are subject to lender approval.</span>
+</div></footer>
+
+<script>
+var S=[
+{n:"Retail finance",d:"Loans for individuals and small businesses.",p:[["Business loan","Working capital and growth funding."],["Loan against property","Higher amounts against your property."],["Vehicle and equipment loan","Finance for vehicles and machinery."]]},
+{n:"Project finance",d:"Funding for new projects and expansion.",p:[["Term loan","Long-tenure funding for new setups."],["Structured finance","Customised funding for larger projects."],["Equity and investment advisory","Guidance on raising and placing capital."]]},
+{n:"Channel finance",d:"Support for dealers, distributors and suppliers.",p:[["Dealer finance","Stock funding for dealers."],["Vendor finance","Faster payments for suppliers."],["Invoice discounting","Cash against pending invoices."]]},
+{n:"Trade finance",d:"Finance for buying and selling goods.",p:[["Letter of credit","Payment security for buyers and sellers."],["Bank guarantee","Assurance for contracts and tenders."],["Export and import finance","Funding across the trade cycle."]]}];
+var g=document.getElementById('sectors'),sel=document.getElementById('sel');
+S.forEach(function(s,i){
+  g.insertAdjacentHTML('beforeend','<div class="card pc" role="button" tabindex="0" aria-pressed="false" data-i="'+i+'"><div class="ill"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#c2a265" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M5 20V10l7-5 7 5v10M9 20v-6h6v6"/></svg></div><div class="body"><h3>'+s.n+'</h3><p>'+s.d+'</p><span class="more">View products &rarr;</span></div></div>');
+  sel.insertAdjacentHTML('beforeend','<option>'+s.n+'</option>');
+});
+function show(i){
+  var s=S[i];
+  document.getElementById('dt').textContent=s.n;
+  document.getElementById('dp').textContent=s.d;
+  document.getElementById('dl').innerHTML=s.p.map(function(x){return '<li>'+x[0]+'<span>'+x[1]+'</span></li>'}).join('');
+  [].forEach.call(g.children,function(c,k){c.classList.toggle('on',k==i);c.setAttribute('aria-pressed',k==i)});
+}
+g.addEventListener('click',function(e){var c=e.target.closest('.pc');if(c)show(+c.dataset.i)});
+g.addEventListener('keydown',function(e){var c=e.target.closest('.pc');if(c&&(e.key=='Enter'||e.key==' ')){e.preventDefault();show(+c.dataset.i)}});
+show(0);
+var tl=document.getElementById('tl');
+function step(li){[].forEach.call(tl.children,function(x){x.classList.toggle('on',x==li)})}
+tl.addEventListener('click',function(e){var li=e.target.closest('li');if(li)step(li)});
+tl.addEventListener('keydown',function(e){if(e.key=='Enter'||e.key==' '){e.preventDefault();var li=e.target.closest('li');if(li)step(li)}});
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();document.getElementById('ok').textContent='Thank you. We have received your enquiry and will call you back.';this.reset()});
+document.getElementById('y').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
