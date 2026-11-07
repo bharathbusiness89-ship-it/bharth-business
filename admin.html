@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Enquiries – Admin</title>
+<style>
+body{font:15px/1.5 system-ui,sans-serif;margin:0;padding:24px;background:#f3f6f5;color:#10241f}
+h1{margin:0 0 16px}.box{max-width:1100px;margin:0 auto}
+input,button{font:inherit;padding:10px 12px;border-radius:8px;border:1px solid #c9d4d1}
+button{background:#c2a265;border:0;font-weight:600;cursor:pointer}
+.stats{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0}
+.stat{background:#fff;border-radius:10px;padding:14px 20px;min-width:140px;border:1px solid #dde5e3}
+.stat b{display:block;font-size:28px}
+.wrap{overflow-x:auto;background:#fff;border:1px solid #dde5e3;border-radius:10px}
+table{border-collapse:collapse;width:100%}th,td{padding:10px 12px;border-bottom:1px solid #e6ecea;text-align:left;vertical-align:top}
+th{background:#0c2f2c;color:#fff;white-space:nowrap}
+@media (prefers-color-scheme:dark){body{background:#0a1a19;color:#edf1fa}.stat,.wrap,td{background:#12302d;border-color:#25504b}input{background:#0a1a19;color:#fff}}
+</style></head><body><div class="box">
+<h1>Enquiries</h1>
+<form id="lg"><input type="password" id="pw" placeholder="Admin password" required> <button>View</button> <span id="err"></span></form>
+<div id="out" hidden>
+ <div class="stats"><div class="stat"><b id="t">0</b>Total</div><div class="stat"><b id="d">0</b>Today</div><div class="stat"><b id="w">0</b>Last 7 days</div></div>
+ <div class="wrap"><table><thead><tr><th>Date</th><th>Name</th><th>Phone</th><th>Email</th><th>Interested in</th><th>Requirement</th></tr></thead><tbody id="rows"></tbody></table></div>
+</div></div>
+<script>
+function load(pw){
+  fetch('/api/enquiries',{headers:{'x-admin-key':pw}}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(a){
+    sessionStorage.setItem('ak',pw);
+    document.getElementById('lg').hidden=true;document.getElementById('out').hidden=false;
+    var now=new Date(),day=now.toDateString(),wk=now-7*864e5;
+    document.getElementById('t').textContent=a.length;
+    document.getElementById('d').textContent=a.filter(function(x){return new Date(x.created_at).toDateString()===day}).length;
+    document.getElementById('w').textContent=a.filter(function(x){return new Date(x.created_at)>wk}).length;
+    var tb=document.getElementById('rows');tb.textContent='';
+    a.forEach(function(x){var tr=document.createElement('tr');
+      [new Date(x.created_at).toLocaleString('en-IN'),x.name,x.phone,x.email,x.product,x.message].forEach(function(v){var td=document.createElement('td');td.textContent=v||'';tr.appendChild(td)});
+      tb.appendChild(tr)});
+  }).catch(function(){sessionStorage.removeItem('ak');document.getElementById('err').textContent='Wrong password or server error.'});
+}
+document.getElementById('lg').addEventListener('submit',function(e){e.preventDefault();load(document.getElementById('pw').value)});
+var k=sessionStorage.getItem('ak');if(k)load(k);
+</script></body></html>
